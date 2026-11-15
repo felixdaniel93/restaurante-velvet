@@ -644,3 +644,60 @@ footer ul li a:hover{ color: var(--gold); }
   .pratos-grid{ grid-template-columns: 1fr; }
   .footer-grid{ grid-template-columns: 1fr 1fr; }
 }
+
+/* ===========================================================
+   AJUSTES FINAIS
+   =========================================================== */
+
+/* o header fixo não cobre o título ao navegar pelas âncoras */
+html{ scroll-padding-top: 70px; }
+
+/* botão do menu mobile (escondido no desktop) */
+.menu-toggle{ position:absolute; opacity:0; pointer-events:none; }
+.menu-btn{ display:none; width:28px; height:20px; position:relative; cursor:pointer; }
+.menu-btn span,
+.menu-btn::before,
+.menu-btn::after{
+  position:absolute; left:0; width:100%; height:2px;
+  background: var(--gold); transition: transform .3s ease, opacity .3s ease;
+}
+.menu-btn::before,
+.menu-btn::after{ content:""; }
+.menu-btn::before{ top:0; }
+.menu-btn span{ top:9px; }
+.menu-btn::after{ bottom:0; }
+.menu-toggle:checked + .menu-btn span{ opacity:0; }
+.menu-toggle:checked + .menu-btn::before{ top:9px; transform: rotate(45deg); }
+.menu-toggle:checked + .menu-btn::after{ bottom:9px; transform: rotate(-45deg); }
+
+/* o flip também funciona por toque e por teclado (foco) */
+.prato-card:focus{ outline:none; }
+.prato-card:focus-within::before{ opacity:1; }
+.prato-card:focus-within .prato-card-inner{ transform: rotateY(180deg); }
+.prato-card:focus-within .ingredient-list span{ opacity:1; transform: translateY(0); }
+
+/* quem prefere menos movimento: sem animações (os cards continuam visíveis) */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation:none !important; transition-duration:.01ms !important; }
+  .prato-card{ opacity:1; }
+}
+
+@media (max-width: 900px){
+  .menu-btn{ display:block; }
+  .nav-inner{ padding: 16px 32px; }
+  .nav-links{
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; gap:0;
+    background: rgba(23,19,16,.96);
+    padding: 8px 32px 16px;
+    border-bottom: 1px solid rgba(201,162,75,.12);
+  }
+  .nav-links a{ display:block; padding: 14px 0; }
+  .menu-toggle:checked ~ .nav-links{ display:flex; }
+  .about{ padding: 80px 0; }
+  .pratos{ padding: 80px 0 100px; }
+  .estatisticas{ flex-wrap:wrap; gap: 32px; }
+}
+@media (max-width: 560px){
+  .footer-grid{ grid-template-columns: 1fr; }
+}
