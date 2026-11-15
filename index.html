@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- viewport é o que faz o site respeitar a largura real da tela do
+     celular, em vez de renderizar como se fosse um desktop encolhido. -->
+<title>Velvet — Alta Gastronomia</title>
+
+<!-- preconnect avisa o navegador, antes mesmo de precisar do arquivo,
+     que ele vai se conectar a fonts.googleapis.com — isso adianta
+     a etapa de conexão (DNS/TLS) e a fonte carrega um pouco mais rápido. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <header class="nav-bar">
+    <div class="nav-inner">
+      <!-- o "Vel" fica com a cor padrão do texto e o "ve" (dentro do
+           <span>) recebe a cor dourada via CSS (.logo span) -->
+      <a href="#" class="logo">Vel<span>vet</span></a>
+      <ul class="nav-links">
+        <!-- href="#inicio" aponta pro elemento com id="inicio" mais
+             abaixo na página — é assim que o menu "pula" pra cada seção -->
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#pratos">Cardápio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <img src="./img/ambiente.jpg" alt="Ambiente do restaurante Velvet">
+    </div>
+    <!-- os 8 <span> vazios aqui são só "ganchos" pro CSS desenhar e
+         animar as partículas de brasa — eles não têm conteúdo de texto,
+         toda a aparência deles vem do .embers span no CSS -->
+    <div class="embers">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="hero-content">
+      <span class="destaque">Bem-vindo ao Velvet</span>
+      <h1>Sabor que conta <em>uma história</em></h1>
+      <p>Ingredientes selecionados, técnica apurada e uma experiência gastronômica pensada em cada detalhe.</p>
+      <a href="#pratos" class="btn">Ver Cardápio</a>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="about-image">
+        <img src="./img/interior.jpg" alt="Interior do restaurante">
+      </div>
+      <div class="texto-sobre">
+        <span class="destaque">Nossa Essência</span>
+        <h2>Uma cozinha guiada pelo fogo e pela paciência</h2>
+        <p>Desde a nossa fundação, acreditamos que a alta gastronomia nasce do respeito ao ingrediente. Cada prato do Velvet é construído em camadas de sabor, com técnicas clássicas e um toque autoral.</p>
+        <p>Nosso salão foi desenhado para ser tão memorável quanto o menu: luz baixa, madeira escura e detalhes em dourado que remetem à tradição das grandes casas europeias.</p>
+        <div class="estatisticas">
+          <div>
+            <strong>22</strong>
+            <span>Anos de Tradição</span>
+          </div>
+          <div>
+            <strong>48</strong>
+            <span>Pratos Autorais</span>
+          </div>
+          <div>
+            <strong>4.9</strong>
+            <span>Avaliação Média</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pratos" id="pratos">
+    <div class="container">
+      <div class="section-head">
+        <span class="destaque">Selecionados a dedo</span>
+        <h2>Pratos em Destaque</h2>
+        <p>Uma amostra do que a nossa cozinha tem de mais autêntico — passe o mouse e conheça cada prato.</p>
+      </div>
+      <div class="pratos-grid">
+
+        <!-- Cada .prato-card tem uma estrutura fixa de 3 camadas:
+             .prato-card (perspectiva 3D + brilho)
+               > .prato-card-inner (o que realmente gira)
+                   > .prato-face--front (o que se vê antes do hover)
+                   > .prato-face--back  (o que aparece depois do flip)
+             Repita esse "molde" pra cada novo prato do cardápio. -->
+
+        <div class="prato-card">
+          <div class="prato-card-inner">
+            <div class="prato-face prato-face--front">
+              <div class="prato-image">
+                <span class="prato-tag">Chef</span>
+                <img src="./img/file.jpg" alt="Filé ao molho de vinho">
+              </div>
+              <div class="prato-body">
+                <div class="prato-divider"></div>
+                <h3>Filé ao Vinho</h3>
+                <div class="prato-footer">
+                  <span class="prato-preco">R$ 89</span>
+                </div>
+                <span class="prato-dica">Passe o mouse</span>
+              </div>
+            </div>
+            <div class="prato-face prato-face--back">
+              <span class="destaque">Sobre o prato</span>
+              <h3>Filé ao Vinho</h3>
+              <p>Corte nobre grelhado no ponto, redução de vinho tinto e legumes salteados na manteiga.</p>
+              <div class="ingredient-list">
+                <span>Filé mignon</span><span>Vinho tinto</span><span>Manteiga</span><span>Legumes</span>
+              </div>
+              <div class="prato-footer">
+                <span class="prato-preco">R$ 89</span>
+                <span class="prato-add">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prato-card">
+          <div class="prato-card-inner">
+            <div class="prato-face prato-face--front">
+              <div class="prato-image">
+                <span class="prato-tag">Popular</span>
+                <img src="./img/massa.jpg" alt="Massa artesanal">
+              </div>
+              <div class="prato-body">
+                <div class="prato-divider"></div>
+                <h3>Tagliatelle Tartufo</h3>
+                <div class="prato-footer">
+                  <span class="prato-preco">R$ 64</span>
+                </div>
+                <span class="prato-dica">Passe o mouse</span>
+              </div>
+            </div>
+            <div class="prato-face prato-face--back">
+              <span class="destaque">Sobre o prato</span>
+              <h3>Tagliatelle Tartufo</h3>
+              <p>Massa fresca artesanal, manteiga de trufa negra e lascas de parmesão envelhecido.</p>
+              <div class="ingredient-list">
+                <span>Tagliatelle</span><span>Trufa negra</span><span>Parmesão</span><span>Manteiga</span>
+              </div>
+              <div class="prato-footer">
+                <span class="prato-preco">R$ 64</span>
+                <span class="prato-add">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prato-card">
+          <div class="prato-card-inner">
+            <div class="prato-face prato-face--front">
+              <div class="prato-image">
+                <span class="prato-tag">Novo</span>
+                <img src="./img/pizza.jpg" alt="Pizza artesanal no forno a lenha">
+              </div>
+              <div class="prato-body">
+                <div class="prato-divider"></div>
+                <h3>Forno a Lenha</h3>
+                <div class="prato-footer">
+                  <span class="prato-preco">R$ 58</span>
+                </div>
+                <span class="prato-dica">Passe o mouse</span>
+              </div>
+            </div>
+            <div class="prato-face prato-face--back">
+              <span class="destaque">Sobre o prato</span>
+              <h3>Forno a Lenha</h3>
+              <p>Massa de fermentação longa, molho de tomate San Marzano e mussarela de búfala.</p>
+              <div class="ingredient-list">
+                <span>Massa longa</span><span>San Marzano</span><span>Búfala</span><span>Manjericão</span>
+              </div>
+              <div class="prato-footer">
+                <span class="prato-preco">R$ 58</span>
+                <span class="prato-add">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">Vel<span>vet</span></a>
+          <p>Alta gastronomia com identidade autoral, em um ambiente pensado para ser tão memorável quanto cada prato servido.</p>
+        </div>
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#pratos">Cardápio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="#">(11) 4002-8922</a></li>
+            <li><a href="#">contato@velvet.com.br</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Redes Sociais</h4>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Vel<span class="logo-accent">vet</span>. Todos os direitos reservados. <br> Desenvolvido por Daniel Felix
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
