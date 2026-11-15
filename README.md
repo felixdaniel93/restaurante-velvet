@@ -2,7 +2,7 @@
 
 Landing page responsiva para um restaurante fictício, feita só com HTML e CSS (mais um pequeno trecho de JavaScript para o menu mobile). O foco do projeto foi o acabamento visual: animações, efeitos 3D e uma identidade própria em tons de preto, dourado e vinho.
 
-🔗 **Demo:** [felixdaniel93.github.io/velvet](https://felixdaniel93.github.io/velvet/)
+🔗 **Demo:** [felixdaniel93.github.io/restaurante-velvet](https://felixdaniel93.github.io/restaurante-velvet/)
 
 ## Funcionalidades
 
@@ -44,8 +44,8 @@ Landing page responsiva para um restaurante fictício, feita só com HTML e CSS 
 Não precisa instalar nada.
 
 ```bash
-git clone https://github.com/felixdaniel93/velvet.git
-cd velvet
+git clone https://github.com/felixdaniel93/restaurante-velvet.git
+cd restaurante-velvet
 ```
 
 Abra o `index.html` no navegador. Se preferir um servidor local, use a extensão **Live Server** do VS Code.
